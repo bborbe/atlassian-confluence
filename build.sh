@@ -30,6 +30,11 @@ if [ ! -n "${VERSION}" ] && [  ! -z "$git_branch" ] && [ ! "$git_branch" = "HEAD
 	VERSION="$git_branch"
 fi
 
+if [ ! -n "${VERSION}" ]; then
+	echo "set version to latest"
+	VERSION="latest"
+fi
+
 VERSION="${ATLASSIAN_VERSION}-${VERSION}"
 
 echo "VERSION=${VERSION} ATLASSIAN_VERSION=${ATLASSIAN_VERSION}"
