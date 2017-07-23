@@ -1,6 +1,10 @@
 # Atlassian Confluence Docker
 
-Atlassian Confluence Docker
+## Version Schema
+
+CONFLUENCEVERISON-BUILDVERSION
+
+6.3.1-1.0.0 = Confluence 6.3.1 and Buildscripts 1.0.0
 
 ## Copyright and license
 
