@@ -12,16 +12,16 @@ if [ ! -n "${ATLASSIAN_VERSION}" ]; then
     ATLASSIAN_VERSION="$(curl -s https://my.atlassian.com/download/feeds/confluence.rss | grep -Po "(\d{1,2}\.){2,3}\d" | uniq)";
 fi
 
-jenkins_branch=${GIT_BRANCH##origin/}
-if [ ! -n "${VERSION}" ] && [ ! -z "$jenkins_branch" ]; then
-	echo "set version to jenkins branch"
-	VERSION="$jenkins_branch"
-fi
-
 git_tag=$(git tag -l --points-at HEAD)
 if [ ! -n "${VERSION}" ] && [ ! -z "$git_tag" ]; then
 	echo "set version to git tag"
 	VERSION="$git_tag"
+fi
+
+jenkins_branch=${GIT_BRANCH##origin/}
+if [ ! -n "${VERSION}" ] && [ ! -z "$jenkins_branch" ]; then
+	echo "set version to jenkins branch"
+	VERSION="$jenkins_branch"
 fi
 
 git_branch=$(git rev-parse --abbrev-ref HEAD)
