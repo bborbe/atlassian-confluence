@@ -41,7 +41,10 @@ RUN set -x \
 	&& sed -i 's/-Djava.awt.headless=true/-Djava.awt.headless=true -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false/' /opt/confluence/bin/setenv.sh
 
 COPY files/server.xml /opt/confluence/conf/
+COPY files/entrypoint.sh /usr/local/bin/
+COPY files/service.sh /usr/local/bin/
 
-EXPOSE 8780 8709
+EXPOSE 8780
 
-CMD ["/opt/confluence/bin/catalina.sh", "run"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+CMD ["/usr/local/bin/service.sh"]
