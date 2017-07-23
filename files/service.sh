@@ -5,4 +5,4 @@ set -o nounset
 set -o pipefail
 set -o errtrace
 
-/opt/confluence/bin/catalina.sh run
+/opt/confluence/bin/start-confluence.sh -fg
