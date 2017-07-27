@@ -2,8 +2,9 @@
 
 ## Run
 
-mkdir -p /tmp/confluence-app /tmp/confluence-psql
+`mkdir -p /tmp/confluence-app /tmp/confluence-psql`
 
+```
 docker rm confluence-db
 docker run \
 --name confluence-db \
@@ -13,7 +14,9 @@ docker run \
 -p 5432:5432 \
 -v /tmp/confluence-psql:/var/lib/postgresql/data \
 docker.io/postgres:9.5
+```
 
+```
 docker rm confluence-app
 docker run \
 --name confluence-app \
@@ -24,6 +27,7 @@ docker run \
 -v /tmp/confluence-app:/var/lib/confluence \
 --link confluence-db:confluence-db \
 docker.io/bborbe/atlassian-confluence:6.3.1-1.0.5
+```
 
 Open http://localhost:8780
 
