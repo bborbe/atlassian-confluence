@@ -40,8 +40,6 @@ RUN set -x \
 
 RUN set -x \
 	&& echo 'confluence.home = /var/lib/confluence' > /opt/confluence/confluence/WEB-INF/classes/confluence-init.properties \
-	&& sed -i 's/-Xms1024m/-Xms1024m/' /opt/confluence/bin/setenv.sh \
-	&& sed -i 's/-Xmx1024m/-Xmx1024m/' /opt/confluence/bin/setenv.sh \
 	&& sed -i 's/-Djava.awt.headless=true/-Djava.awt.headless=true -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false/' /opt/confluence/bin/setenv.sh
 
 COPY files/server.xml /opt/confluence/conf/
