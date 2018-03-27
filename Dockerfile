@@ -35,8 +35,8 @@ RUN set -x \
 	&& sed -i 's/file:\/dev\/random/file:\/dev\/urandom/' /usr/lib/jvm/java-8-oracle/jre/lib/security/java.security
 
 RUN set -x \
-	&& mkdir -p /opt/confluence \
-	&& wget -qO- https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-${VENDOR_VERSION}.tar.gz | tar xvz --transform 's/^atlassian-confluence-${VENDOR_VERSION}/confluence/' -C /opt
+	&& mkdir -p /opt \
+	&& wget -qO- https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-${VENDOR_VERSION}.tar.gz | tar xvz --transform "s/^atlassian-confluence-${VENDOR_VERSION}/confluence/" -C /opt
 
 RUN set -x \
 	&& echo 'confluence.home = /var/lib/confluence' > /opt/confluence/confluence/WEB-INF/classes/confluence-init.properties \
