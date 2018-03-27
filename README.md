@@ -28,7 +28,7 @@ docker run \
 -p 8080:8080 \
 -v /tmp/confluence-app:/var/lib/confluence \
 --link confluence-db:confluence-db \
-docker.io/bborbe/atlassian-confluence:6.8.0-1.2.1
+docker.io/bborbe/atlassian-confluence:6.8.0-1.3.0
 ```
 
 Open [http://localhost:8080](http://localhost:8080)
@@ -45,4 +45,4 @@ Database-Setup:
 
 CONFLUENCEVERISON-BUILDVERSION
 
-6.8.0-1.2.1 = Confluence 6.8.0 and Buildscripts 1.2.1
+6.8.0-1.3.0 = Confluence 6.8.0 and Buildscripts 1.3.0
