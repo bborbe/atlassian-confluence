@@ -36,7 +36,7 @@ RUN set -x \
 
 RUN set -x \
 	&& mkdir -p /opt/confluence \
-	&& wget -qO- https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-${ATLASSIAN_VERSION}.tar.gz | tar xvz --transform 's/^atlassian-confluence-${ATLASSIAN_VERSION}/confluence/' -C /opt
+	&& wget -qO- https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-${VENDOR_VERSION}.tar.gz | tar xvz --transform 's/^atlassian-confluence-${VENDOR_VERSION}/confluence/' -C /opt
 
 RUN set -x \
 	&& echo 'confluence.home = /var/lib/confluence' > /opt/confluence/confluence/WEB-INF/classes/confluence-init.properties \
