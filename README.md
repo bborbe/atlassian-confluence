@@ -25,13 +25,13 @@ docker run \
 -e HOSTNAME=localhost \
 -e SCHEMA=http \
 -e PORT=8080 \
--p 8780:8780 \
+-p 8080:8080 \
 -v /tmp/confluence-app:/var/lib/confluence \
 --link confluence-db:confluence-db \
 docker.io/bborbe/atlassian-confluence:6.8.0-1.2.1
 ```
 
-Open [http://localhost:8780](http://localhost:8780)
+Open [http://localhost:8080](http://localhost:8080)
 
 Database-Setup:
 

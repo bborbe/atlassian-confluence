@@ -48,7 +48,7 @@ COPY files/server.xml /opt/confluence/conf/
 COPY files/entrypoint.sh /usr/local/bin/
 COPY files/service.sh /usr/local/bin/
 
-EXPOSE 8780
+EXPOSE 8080
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 CMD ["/usr/local/bin/service.sh"]
