@@ -2,9 +2,11 @@
 
 ## Run
 
-`mkdir -p /tmp/confluence-app /tmp/confluence-psql`
-
+```bash
+mkdir -p /tmp/confluence-app /tmp/confluence-psql
 ```
+
+```bash
 docker rm confluence-db
 docker run \
 --name confluence-db \
@@ -13,10 +15,10 @@ docker run \
 -e POSTGRES_PASSWORD=test123 \
 -p 5432:5432 \
 -v /tmp/confluence-psql:/var/lib/postgresql/data \
-docker.io/postgres:9.5
+docker.io/postgres:9.6
 ```
 
-```
+```bash
 docker rm confluence-app
 docker run \
 --name confluence-app \
@@ -26,18 +28,21 @@ docker run \
 -p 8780:8780 \
 -v /tmp/confluence-app:/var/lib/confluence \
 --link confluence-db:confluence-db \
-docker.io/bborbe/atlassian-confluence:6.3.1-1.0.5
+docker.io/bborbe/atlassian-confluence:6.8.0-1.2.1
 ```
 
-Open http://localhost:8780
+Open [http://localhost:8780](http://localhost:8780)
 
 Database-Setup:
-User: confluence
-Pass: test123
-Host: confluence-db
+
+* Host: confluence-db
+* Port 5432
+* Database: confluence
+* User: confluence
+* Pass: test123
 
 ## Version Schema
 
 CONFLUENCEVERISON-BUILDVERSION
 
-6.3.1-1.0.0 = Confluence 6.3.1 and Buildscripts 1.0.0
+6.8.0-1.2.1 = Confluence 6.8.0 and Buildscripts 1.2.1
