@@ -28,7 +28,7 @@ docker run \
 -p 8080:8080 \
 -v /tmp/confluence-app:/var/lib/confluence \
 --link confluence-db:confluence-db \
-docker.io/bborbe/atlassian-confluence:6.8.0-1.3.0
+docker.io/bborbe/atlassian-confluence:6.15.2-1.4.0
 ```
 
 Open [http://localhost:8080](http://localhost:8080)
