@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Server port="18705" shutdown="SHUTDOWN" debug="0">
 	<Service name="Tomcat-Standalone">
-		<Connector port="8080"
+		<Connector port="{{PORT}}"
 				   connectionTimeout="20000"
 				   redirectPort="8443"
 				   maxThreads="150"
@@ -11,12 +11,12 @@
 				   debug="0"
 				   URIEncoding="UTF-8"
 				   protocol="HTTP/1.1"
-				   address="0.0.0.0"
+				   address="{{ADDRESS}}"
 				   disableUploadTimeout="true"
 				   maxHttpHeaderSize="8192"
 				   useBodyEncodingForURI="true"
-				   proxyName="{{HOSTNAME}}"
-				   proxyPort="{{PORT}}"
+				   proxyName="{{PROXY_NAME}}"
+				   proxyPort="{{PROXY_PORT}}"
 				   scheme="{{SCHEMA}}"/>
 		<Engine name="Standalone" defaultHost="localhost" debug="0">
 			<Host name="localhost" debug="0" appBase="webapps" unpackWARs="true" autoDeploy="false">
