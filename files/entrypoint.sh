@@ -32,8 +32,8 @@ if [ "$1" = "/usr/local/bin/service.sh" ]; then
 
 	MEMORY=${MEMORY:-"1024"}
 	echo "set memory to ${MEMORY}"
-	sed -i "s/-Xms1024m/-Xms${MEMORY}m/" /opt/confluence/conf/server.xml
-	sed -i "s/-Xmx1024m/-Xmx${MEMORY}m/" /opt/confluence/conf/server.xml
+	sed -i "s/-Xms1024m/-Xms${MEMORY}m/" /opt/confluence/bin/setenv.sh
+	sed -i "s/-Xmx1024m/-Xmx${MEMORY}m/" /opt/confluence/bin/setenv.sh
 
 	echo "configure done"
 fi

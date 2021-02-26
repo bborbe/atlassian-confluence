@@ -7,7 +7,11 @@ Please choose versions by [Semantic Versioning](http://semver.org/).
 * MAJOR version when you make incompatible API changes,
 * MINOR version when you add functionality in a backwards-compatible manner, and
 * PATCH version when you make backwards-compatible bug fixes.
-        
+
+## 1.5.3
+
+* Fix set memory
+
 ## 1.5.2
 
 * Allow set memory
