@@ -26,9 +26,14 @@ if [ "$1" = "/usr/local/bin/service.sh" ]; then
 	echo "set proxyPort to ${PROXY_PORT}"
 	sed -i "s/{{PROXY_PORT}}/${PROXY_PORT}/" /opt/confluence/conf/server.xml
 
-	PORT=${SCHEMA:-"https"}
+	SCHEMA=${SCHEMA:-"https"}
 	echo "set schema to ${SCHEMA}"
 	sed -i "s/{{SCHEMA}}/${SCHEMA}/" /opt/confluence/conf/server.xml
+
+	MEMORY=${MEMORY:-"1024"}
+	echo "set memory to ${MEMORY}"
+	sed -i "s/-Xms1024m/-Xms${MEMORY}m/" /opt/confluence/conf/server.xml
+	sed -i "s/-Xmx1024m/-Xmx${MEMORY}m/" /opt/confluence/conf/server.xml
 
 	echo "configure done"
 fi
